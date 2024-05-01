@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block content %}
+<div class="container" style="background-color: #1b4965; padding: 20px;">
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <div class="box" style="border: none;">
+        <h1 class="title is-3 has-text-centered">Iniciar Sesión</h1>
+        <p class="subtitle is-5 has-text-centered">Utiliza el siguiente formulario para iniciar sesión:</p>
+      
+        <form method="post">
+          {% csrf_token %}
+          <div class="field">
+            <label class="label has-text-white">Correo Electrónico</label>
+            <div class="control">
+              <input class="input" type="email" name="email" placeholder="Tu correo electrónico">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label has-text-white">Contraseña</label>
+            <div class="control">
+              <input class="input" type="password" name="password" placeholder="Tu contraseña">
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button type="submit" class="button is-primary is-fullwidth">Iniciar Sesión</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

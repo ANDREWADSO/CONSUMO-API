@@ -1,0 +1,76 @@
+{% extends '../index_master.html' %}
+
+{% block content %}
+<div class="right_col" role="main">
+<h1>Agregar Estudiantes</h1>
+
+
+<!-- EL FORM LLAMA A UNA URL, DESPUES LLAMO LA LISTA EN VIEWS-->
+<form action="agregar" method="POST"> 
+    {% csrf_token %}
+    <div class="form-group row">
+      <label for="text1" class="col-4 col-form-label">Nombre</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-address-card"></i>
+          </div> 
+          <input id="nombre" name="nombre" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="text" class="col-4 col-form-label">Apellido</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-address-card-o"></i>
+          </div> 
+          <input id="apellido" name="apellido" type="text" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="text2" class="col-4 col-form-label">Correo</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-inbox"></i>
+          </div> 
+          <input id="correo" name="correo" type="email" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="text3" class="col-4 col-form-label">Telefono</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-phone-square"></i>
+          </div> 
+          <input id="telefono" name="telefono" type="number" required="required" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="text4" class="col-4 col-form-label">Fecha de Nacimiento</label> 
+      <div class="col-8">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+          </div> 
+          <input id="fecha_nacimiento" name="fecha_nacimiento" type="date" class="form-control" min="1900-01-01" max="2006-01-01">
+        </div>
+      </div>
+    </div> 
+    <div class="form-group row">
+      <div class="offset-4 col-8">
+        <button name="back" class="btn btn-primary" onclick="history.back(); return false;"><i class="fa fa-angle-left"></i> Volver</button>
+        <button name="submit" type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Agregar Información</button>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+{% endblock %}

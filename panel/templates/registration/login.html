@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Iniciar Sesión{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    background-image: url({% static "img/aprendix.jpg" %});
+    background-size: cover;
+    background-position: center;
+}
+</style>
+
+<div class="columns is-centered">
+  <div class="column is-half">
+    <div class="box" style="padding: 20px;">
+      <h1 class="title is-3 has-text-centered">Iniciar Sesión</h1>
+      {% if form.errors %}
+        <div class="notification is-danger">
+          <p class="subtitle is-5">
+            Su nombre de usuario y contraseña no coinciden.
+            Inténtalo de nuevo.
+          </p>
+        </div>
+      {% else %}
+        <!-- Comentario eliminado -->
+      {% endif %}
+
+      <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="field" style="text-align: center;">
+          <label class="label">Nombre de usuario</label>
+          <div class="control">
+            {{ form.username }}
+          </div>
+        </div>
+        <div class="field" style="text-align: center;">
+          <label class="label">Contraseña</label>
+          <div class="control">
+            {{ form.password }}
+          </div>
+        </div>
+        <div class="field is-grouped is-grouped-centered">
+          <div class="control">
+            <button type="submit" class="button is-primary">Iniciar Sesión</button>
+          </div>
+        </div>
+        <input type="hidden" name="next" value="{{ next }}" />
+      </form>
+      <p class="has-text-centered mt-4">
+        ¿No tienes una cuenta? <a href="{% url 'register' %}">Regístrate aquí</a>.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

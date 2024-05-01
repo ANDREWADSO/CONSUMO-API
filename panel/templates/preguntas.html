@@ -1,0 +1,27 @@
+{% extends 'index_master.html' %}
+
+{% block content %}
+
+    <div id="content" class="container-fluid">
+        <!-- Begin Page Content -->
+        <div class="container">
+            <!-- Page Heading -->
+            <h1 class="text-center mb-4">Responde el siguiente cuestionario</h1>
+            <!-- Content Centered -->
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        {% for pregunta in preguntas %}
+                            <li class="list-group-item">{{ pregunta.texto_pregunta }}</li>
+                            {% for respuesta in pregunta.respuestaFormulario %}
+                                <div>{{ respuesta.texto_respuesta }}</div>
+                            {% endfor %}
+
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

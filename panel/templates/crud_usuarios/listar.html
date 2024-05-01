@@ -1,0 +1,62 @@
+{% extends '../index_master.html' %}
+
+{% block content %}
+<div class="right_col" role="main">
+<h1>Lista de Estudiantes</h1>
+
+<div>
+  <form action="" method="POST" display: inline-block>
+  {% csrf_token %}
+ 
+  <input type="text" name="keyword" id="keyword" class="form-control" style="width: 350px; display: inline-block;"><button type="submit" name="search" class="btn btn-success"> <i class="fa fa-search"></i></button>
+  </form>
+</div>
+  
+  
+  <button name="agregar" class="btn btn-primary" onclick="window.location.href='agregar'"><i class="fa fa-plus"></i> Nuevo Estudiante</button>
+  
+
+
+
+<table class="table ">
+    <thead>
+      <tr>
+        <th scope="col">No</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Fecha de Nacimiento</th>
+        <th scope="col">Fecha de Registro</th>
+        <th scope="col">Acción</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+    {% for u in usuarios %}
+      <tr>
+        <th scope="row">{{ u.id }}</th>
+        <td>{{ u.nombre }}</td>
+        <td>{{ u.apellido }}</td>
+        <td>{{ u.correo }}</td>
+        <td>{{ u.telefono }}</td>
+        <td>{{ u.fecha_nacimiento }}</td>
+        <td>{{ u.fecha_registro }}</td>
+        <td>
+          <button class="btn btn-warning" onclick="window.location.href='actualizar/{{ u.id }}'"><i class="fa fa-refresh"></i></button>
+          <button class="btn btn-danger" onclick="window.location.href='eliminar/{{ u.id }}'"><i class="fa fa-trash"></i></button>
+
+        </td>
+        
+      </tr>
+      {% endfor %}
+     
+    </tbody>
+  
+  </table>
+
+</div>
+
+
+{% endblock %}

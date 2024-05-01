@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}Crea una cuenta{% endblock %}
+
+{% block content %}
+<div class="columns is-centered">
+  <div class="column is-half">
+
+      <h1 class="is-size-3 mt-3 has-text-centered">Crea tu cuenta</h1>
+      <p class="is-size-5 has-text-centered">Regístrate Aqui:</p>
+      <div class="login-form">
+
+        <form method="post">
+          {% load widget_tweaks %}
+          {{ user_form.username.label_tag }} 
+          {% render_field user_form.username class+="input mt-2"%}
+          {{ user_form.first_name.label_tag }} 
+          {% render_field user_form.first_name class+="input mt-2"%}
+          {{ user_form.email.label_tag }} 
+          {% render_field user_form.email class+="input mt-2"%}
+          {{ user_form.password.label_tag }} 
+          {% render_field user_form.password class+="input mt-2"%}
+          {{ user_form.password2.label_tag }} 
+          {% render_field user_form.password2 class+="input mt-2"%}
+          {% csrf_token %}
+          <div class="field is-grouped is-grouped-centered mt-4"> <!-- Añadido margen superior -->
+            <div class="control">
+              <input type="submit" value="Crear mi cuenta" class="button is-link">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  {% endblock %}
+
+</div>

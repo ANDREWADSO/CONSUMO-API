@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Bienvenido a Aprendix{% endblock %}</title>
+</head>
+<link rel="stylesheet" href="{% static 'css/landing_page.css' %}">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<body>
+  <!-- Navbar -->
+  <div class="navbar" role="navigation" aria-label="main navigation">
+    <!-- Logo -->
+    <div class="navbar-brand">
+      <img src= '{% static "logo.jpg" %}' />
+      Aprendix
+    </div>
+    <!-- Links -->
+    <div class="navbar-links">
+      <div class="navbar-item">Servicios</div>
+      <div class="navbar-item">Contacto</div>
+      <div class="navbar-item">
+        <a href="{% url 'login' %}" class="button-login">Iniciar Sesión</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Boxes -->
+  <div class="box-container">
+    <div class="box-1">
+      <div class="content">
+          <h1>Libere su potencial de aprendizaje</h1>
+          <p>Aproveche los cursos dirigidos por expertos en Popayán, que mejoran las habilidades para todas las edades. ¡Comience su viaje educativo hoy!</p>
+          <a href="#" class="btn btn-primary">Aprender más</a>
+      </div>
+      <div class="image">
+          <img src="{% static "aprendix.jpg" %}" alt="Aprendix">
+      </div>
+  </div>
+  <div class="box-2">
+    <div class="sub-box">
+      <img src="{% static "tutor.jpg" %}" alt="Tutorias">
+        <h2>Sesiones de tutoría personalizadas</h2>
+        <p>Nuestras sesiones de tutoría personalizadas brindan apoyo personalizado para ayudar a los estudiantes a sobresalir en sus estudios. Nuestros tutores experimentados crean planes de lecciones personalizados para abordar las necesidades y el estilo de aprendizaje únicos de cada estudiante. Ya sea que necesite ayuda con un tema específico o desee mejorar el rendimiento académico general, nuestros tutores están aquí para guiarlo hacia el éxito.</p>
+        <a href="#" class="more-info-button">Más Información</a>
+      </div>
+  <div class="sub-box">
+    <img src="{% static "libros.jpg" %}" alt="Libros"> 
+    <h2>Cursos interactivos en línea</h2>
+      <p>Experimente la comodidad de aprender en cualquier momento y en cualquier lugar con nuestros cursos interactivos en línea. Diseñados para ser atractivos e interactivos, nuestros cursos cubren una amplia gama de temas y son impartidos por instructores expertos. Únase a nuestra aula virtual y conéctese con otros estudiantes para intercambiar ideas y colaborar en proyectos, haciendo que su experiencia de aprendizaje sea realmente enriquecedora.</p>
+      <a href="#" class="more-info-button">Más Información</a> 
+    </div>
+    <div class="sub-box">
+      <img src="{% static "aula.jpg" %}" alt="aula">
+      <h2>Talleres de desarrollo de habilidades</h2>
+        <p>Potencia tus habilidades a través de nuestros talleres de desarrollo de habilidades. Dirigidos por expertos de la industria, estos talleres brindan capacitación práctica en áreas como comunicación, liderazgo, resolución de problemas y más. Obtenga información valiosa, aprenda nuevas técnicas y mejore su desarrollo profesional con nuestros talleres diseñados para satisfacer las demandas del competitivo mercado laboral actual.</p>
+        <a href="#" class="more-info-button">Más Información</a>
+      </div>
+  </div>
+    <div class="box-3">
+      <div class="instructor-container">
+        <<div class="instructor-box">
+          <img src="{% static "1.jpg" %}" alt="Instructor1">
+            <h3>Instructor 1</h3>
+            <p>Desarrollador de Aplicaciones Móviles: Especializado en crear aplicaciones nativas para dispositivos móviles. Ha trabajado en proyectos para iOS y Android.
+              Realidad Aumentada y Geolocalización: Ha explorado tecnologías emergentes, como ARKit y ARCore. Ha desarrollado experiencias inmersivas.
+              Creativo e Innovador: Siempre busca nuevas formas de resolver problemas. Ha creado aplicaciones interactivas y sorprendentes para los usuarios.</p>
+        </div>>
+        <div class="instructor-box">
+          <img src="{% static "2.jpg" %}" alt="Instructor2">
+            <h3>Instructor 2</h3>
+            <p>Experto en Desarrollo Web: Con amplia experiencia en la creación de sitios web atractivos y funcionales. Domina lenguajes como HTML, CSS y JavaScript.
+              Diseñador de Interfaces de Usuario: Apasionado por diseñar interfaces intuitivas y agradables para el usuario. Se enfoca en la usabilidad y la accesibilidad.
+              Especialista en Comercio Electrónico: Ha trabajado en proyectos de tiendas en línea, optimizando la experiencia de compra y la conversión de usuarios.</p>
+        </div>
+        <div class="instructor-box">
+          <img src="{% static "3.jpg" %}" alt="Instructor3">
+            <h3>Instructor 3</h3>
+            <p>Administrador de Sistemas: Experto en configuración y mantenimiento de servidores. Ha implementado soluciones escalables para empresas y organizaciones.
+              Gestor de Bases de Datos: Conocimiento profundo en bases de datos SQL y NoSQL. Ha diseñado esquemas eficientes y asegurado la integridad de los datos.
+              Infraestructura en la Nube: Ha colaborado en proyectos de migración a la nube, optimizando recursos y garantizando la disponibilidad.</p>
+        </div>
+        <div class="instructor-box">
+          <img src="{% static "4.jpg" %}" alt="Instructor4">
+            <h3>Instructor 4</h3>
+            <p>Algoritmos y Estructuras de Datos: Apasionado por la resolución eficiente de problemas. Ha estudiado algoritmos clásicos y modernos.
+              Competidor de Programación: Ha participado en competencias de programación, enfrentándose a desafíos complejos. Siempre busca optimizar su código.
+              Contribuidor de Código Abierto: Activo en comunidades de desarrollo. Ha aportado a proyectos de código abierto, compartiendo su conocimiento.</p>
+        </div>
+    </div>
+    </div>
+    <div class="box-4">
+      <div class="contact-form">
+        <h2>¡Contáctanos!</h2>
+        <form action="procesar_formulario.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ingresa tu nombre">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Ingresa tu correo electrónico">
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Escribe tu mensaje aquí"></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    </div>
+  </div>
+</body>
+<footer class="mi-footer">
+  <p>© 2024 Aprendix. Todos los derechos reservados.</p>
+  <a href="#">Política de privacidad</a>
+  <a href="#">Términos y condiciones</a>
+  <a href="#">Contacto</a>
+</footer>
+</html>

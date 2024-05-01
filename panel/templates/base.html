@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <style>
+    /* Estilos adicionales */
+    .content {
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{% url 'landing_page' %}">
+        <p class="level-item has-text-centered is-size-3">Aprendix</p>
+      </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="{% url 'dashboard' %}">
+          My dashboard
+        </a>
+        <a class="navbar-item" href="{% url 'profile' %}">
+          Perfil
+        </a>
+        <a class="navbar-item" href="#">
+          Contacto
+        </a>
+      </div>
+      <div class="navbar-end">
+        {% if request.user.is_authenticated %}
+          <div class="navbar-item">
+            {{ request.user.first_name|default:request.user.username }}
+          </div>
+          <div class="navbar-item">
+            <form action="{% url 'logout' %}" method="post">
+              {% csrf_token %}
+              <button type="submit" class="button is-small logout-button">Cerrar sesión</button>
+            </form>
+          </div>
+        {% else %}
+          <div class="navbar-item">
+            <a class="button login-button" href="{% url 'login' %}">Iniciar Sesión</a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+  <div class="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>

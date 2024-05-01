@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+  <div class="container">
+    <h1 class="text-center mt-5 mb-4">Bienvenido a tu Panel Educativo</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title">Tus Cursos</h5>
+            <p class="card-text">Aquí encontrarás todos los cursos en los que estás inscrito.</p>
+            <a href="#" class="btn btn-primary">Ver mis cursos</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card shadow p-3 mb-5 bg-white rounded">
+          <div class="card-body">
+            <h5 class="card-title">Nuevos Cursos</h5>
+            <p class="card-text">Descubre los últimos cursos disponibles y mejora tus habilidades.</p>
+            <a href="#" class="btn btn-primary">Explorar nuevos cursos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
